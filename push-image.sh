@@ -4,14 +4,14 @@
 set -eu
 
 # login to your docker hub account
-docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASSWORD
+login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASSWORD
 
 # use the docker tag command to give the image a new name
-sudo docker tag $IMAGE_TAG $DOCKERHUB_REPO/$IMAGE_TAG
+docker tag $IMAGE_TAG $DOCKERHUB_USERNAME/$DOCKERHUB_REPO
 
 # push the image to your docker hub repository
-sudo docker push $DOCKERHUB_REPO/$IMAGE_TAG
+docker push $DOCKERHUB_USERNAME/$DOCKERHUB_REPO
 
 # start the container to test the image 
-sudo docker run -dp 80:80 $DOCKERHUB_REPO/$IMAGE_TAG
+docker run -dp 80:80 $DOCKERHUB_USERNAME/$DOCKERHUB_REPO
 
