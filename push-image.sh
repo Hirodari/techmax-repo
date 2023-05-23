@@ -15,6 +15,3 @@ sudo docker push $DOCKERHUB_REPO/$IMAGE_TAG
 # start the container to test the image 
 sudo docker run -dp 80:80 $DOCKERHUB_REPO/$IMAGE_TAG
 
-# export DOCKERHUB_USERNAME="hirodaridevdock"
-# export DOCKERHUB_PASSWORD="parkstreet02038@"
-# export DOCKERHUB_REPO="techmax-repo"
