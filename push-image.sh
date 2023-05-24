@@ -4,7 +4,7 @@
 set -eu
 
 # login to your docker hub account
-login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASSWORD
+docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASSWORD
 
 # use the docker tag command to give the image a new name
 docker tag $IMAGE_TAG $DOCKERHUB_USERNAME/$DOCKERHUB_REPO
